@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMGPUB℠ | Music Publishing & Licensing Platform</title>
+    <meta name="description" content="SMGPUB℠ — Professional music publishing, beat licensing, catalog management, and creator tools for independent artists.">
+    <meta name="author" content="Ray Summers(CEO)- S.M.G. Publishing">
+
+    <meta property="og:title" content="SMGPUB℠Digital Distribution & Publishing">
+    <meta property="og:description" content="Publish, license, and monetize your music with professional creator tools.">
+    <meta property="og:type" content="website">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0b0b12;
+            --panel: #151525;
+            --primary: #37d0ff;
+            --accent: #c24bff;
+            --text: #ffffff;
+            --muted: #9fb3c8;
+            --stroke: #24243a;
+            --radius: 14px;
+            --shadow: 0 12px 30px rgba(0,0,0,0.4);
+            --transition: all 0.25s ease;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', system-ui, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 { font-family: 'Inter', sans-serif; font-weight: 900; }
+        .serif { font-family: 'Merriweather', serif; }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: rgba(11, 11, 18, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--stroke);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--primary);
+            cursor: pointer;
+            text-shadow: 0 0 15px rgba(55, 208, 255, 0.3);
+        }
+
+        nav { display: flex; align-items: center; }
+        nav a {
+            margin-left: 20px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        nav a:hover { color: var(--primary); }
+
+        .btn {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: #000;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        .btn:hover { transform: translateY(-2px); opacity: 0.9; }
+        .btn.outline {
+            background: none;
+            border: 1px solid var(--stroke);
+            color: var(--text);
+        }
+        .btn.outline:hover { border-color: var(--primary); }
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 80px 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding-top: 100px;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .hero span {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--muted);
+            font-size: 1.1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--stroke);
+            border-radius: var(--radius);
+            padding: 30px;
+            transition: var(--transition);
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .card h3 { margin-bottom: 12px; }
+        .card ul { list-style: none; color: var(--muted); font-size: 0.9rem; margin-bottom: 20px; }
+        .card ul li { margin-bottom: 8px; }
+
+        .price {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+
+        audio { width: 100%; margin: 15px 0; filter: invert(100%) hue-rotate(180deg); opacity: 0.7; }
+
+        input, textarea {
+            width: 100%;
+            padding: 14px;
+            background: var(--bg);
+            border: 1px solid var(--stroke);
+            border-radius: 8px;
+            color: white;
+            margin-bottom: 15px;
+            font-family: inherit;
+        }
+
+        footer {
+            border-top: 1px solid var(--stroke);
+            padding: 60px 20px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        @media(max-width: 768px) {
+            header { padding: 15px 20px; flex-direction: column; gap: 15px; }
+            nav { flex-wrap: wrap; justify-content: center; }
+            nav a { margin: 5px 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo" onclick="window.scrollTo(0,0)">SMGPUB℠</div>
+    <nav>
+        <a href="#publishing">Publishing</a>
+        <a href="#plans">Plans</a>
+        <a href="#beats">Beats</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#contact">Contact</a>
+        <a href="#login" class="btn" style="margin-left:20px; padding: 8px 16px;">Login</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <h1>Music Publishing<br><span>Done Right.</span></h1>
+    <p>
+        Global royalty collection, beat licensing, and real-time dashboards. 
+        Professional administration built for independent creators and labels.
+    </p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap">
+        <button class="btn" onclick="subscribe()">Start Membership</button>
+        <a href="#publishing" class="btn outline">Explore Features</a>
+    </div>
+</section>
+
+<section id="publishing">
+    <h2 style="text-align:center">Publishing Administration</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Global Royalties</h3>
+            <p style="color:var(--muted)">Worldwide collection via professional publishing infrastructure and PRO registration.</p>
+        </div>
+        <div class="card">
+            <h3>Rights Control</h3>
+            <p style="color:var(--muted)">Retain 100% of your ownership. We simply manage the collection and reporting.</p>
+        </div>
+        <div class="card">
+            <h3>Sync Ready</h3>
+            <p style="color:var(--muted)">Your catalog is structured and tagged for immediate film, TV, and game licensing.</p>
+        </div>
+    </div>
+</section>
+
+<section id="plans">
+    <h2 style="text-align:center">Membership Plans</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Starter</h3>
+            <div class="price">$89.99<span style="font-size:1rem; color:var(--muted)"> /mo</span></div>
+            <ul>
+                <li>✓ PRO Registration</li>
+                <li>✓ 10 Works / Month</li>
+                <li>✓ Basic Reporting</li>
+            </ul>
+            <button class="btn outline" style="width:100%" onclick="subscribe()">Subscribe</button>
+        </div>
+        <div class="card" style="border-color:var(--primary); transform: scale(1.05);">
+            <h3>Pro Publisher</h3>
+            <div class="price">$149<span style="font-size:1rem; color:var(--muted)"> /mo</span></div>
+            <ul>
+                <li>✓ Unlimited Uploads</li>
+                <li>✓ Global Sync Pitching</li>
+                <li>✓ Advanced Analytics</li>
+            </ul>
+            <button class="btn" style="width:100%" onclick="subscribe()">Subscribe</button>
+        </div>
+        <div class="card">
+            <h3>Partner Suite</h3>
+            <div class="price">Custom</div>
+            <ul>
+                <li>✓ White-label Licensing</li>
+                <li>✓ Team/Sub-label Access</li>
+                <li>✓ Dedicated Manager</li>
+            </ul>
+            <button class="btn outline" style="width:100%" onclick="location.href='#contact'">Contact Us</button>
+        </div>
+    </div>
+</section>
+
+<section id="beats">
+    <h2 style="text-align:center">Featured Beats</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Night Shift</h3>
+            <p style="font-size:0.8rem; color:var(--muted)">Trap • 140 BPM • A minor</p>
+            <audio controls></audio>
+            <button class="btn outline" style="width:100%">Buy License - $49.99</button>
+        </div>
+        <div class="card">
+            <h3>Blue Hour</h3>
+            <p style="font-size:0.8rem; color:var(--muted)">Lo-Fi • 80 BPM • C major</p>
+            <audio controls></audio>
+            <button class="btn outline" style="width:100%">Buy License - $39.99</button>
+        </div>
+    </div>
+</section>
+
+<section id="dashboard" style="text-align:center">
+    <h2>Creator Dashboard</h2>
+    <p style="color:var(--muted); margin-bottom: 30px;">Manage your entire catalog, view royalty statements, and track licenses in real-time.</p>
+    <div class="grid" style="text-align:left">
+        <div class="card"><h3>Catalog</h3><p style="font-size:0.9rem; color:var(--muted)">Manage tracks and metadata.</p></div>
+        <div class="card"><h3>Royalties</h3><p style="font-size:0.9rem; color:var(--muted)">Detailed earnings statements.</p></div>
+        <div class="card"><h3>Licenses</h3><p style="font-size:0.9rem; color:var(--muted)">View and issue agreements.</p></div>
+    </div>
+    <button class="btn" style="margin-top:40px" onclick="goDashboard()">Enter Dashboard</button>
+</section>
+<section id="publishing" class="glass-panel">
+    <div class="content">
+        <h2>Blogging & Catalog Management</h2>
+        <p>Every beat license includes a featured slot in our SMGPUB℠ Producer Blog, boosting your SEO and visibility across Summer’s Media LLC networks.</p>
+        <ul class="service-list">
+            <li>✅ Automated Metadata Sync</li>
+            <li>✅ Featured Producer Interviews</li>
+            <li>✅ Global Licensing Distribution</li>
+        </ul>
+    </div>
+</section>
+
+<div id="beat-grid-root"></div>
+
+<section id="contact">
+    <div class="grid">
+        <div id="login">
+            <h2>Artist Login</h2>
+            <div class="card">
+                <input id="email" type="email" placeholder="Email Address">
+                <button class="btn" style="width:100%" onclick="login()">Login to Account</button>
+            </div>
+        </div>
+        <div>
+            <h2>Contact Us</h2>
+            <div class="card">
+                <form onsubmit="event.preventDefault(); alert('Message sent!');">
+                    <input placeholder="Name" required>
+                    <input placeholder="Subject" required>
+                    <textarea rows="3" placeholder="How can we help?"></textarea>
+                    <button class="btn outline" style="width:100%">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© <span id="year">2026</span> SMGPUB℠ — Summer’s Media LLC</p>
+</footer>
+
+<script>
+    const API = "https://YOUR-VERCEL-APP.vercel.app/api";
+
+    // Set current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    async function login() {
+        const email = document.getElementById("email").value;
+        if(!email) return alert("Please enter your email");
+        
+        try {
+            const res = await fetch(`${API}/auth/login`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email })
+            });
+            const data = await res.json();
+            localStorage.setItem("token", data.token);
+            alert("Login successful!");
+        } catch (err) {
+            console.error(err);
+            alert("Login simulation: Connection to API failed.");
+        }
+    }
+
+    async function subscribe() {
+        try {
+            const res = await fetch(`${API}/stripe/subscribe`, { method: "POST" });
+            const data = await res.json();
+            if(data.url) window.location.href = data.url;
+        } catch (err) {
+            alert("Stripe Checkout would launch here.");
+        }
+    }
+
+    function goDashboard() {
+        window.location.href = "/dashboard";
+    }
+</script>
+
+</body>
+</html>
+

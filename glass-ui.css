@@ -1,0 +1,29 @@
+:root {
+    --bg: #0b0b12;
+    --panel: rgba(21, 21, 37, 0.7);
+    --primary: #37d0ff;
+    --accent: #c24bff;
+    --text: #ffffff;
+    --stroke: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background: radial-gradient(circle at top right, #1a1a2e, #0b0b12);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+}
+
+.card {
+    background: var(--panel);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--stroke);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.accent-text {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,25 @@
+<div class="pitch-container">
+    <header class="pitch-header card">
+        <h1 id="projectTitle">Project Pitch</h1>
+        <p>Curated for: <span id="clientName">Loading...</span></p>
+    </header>
+
+    <div id="pitchList" class="catalog-grid">
+        </div>
+</div>
+
+<script>
+    async function loadPitch() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const pitchId = urlParams.get('id');
+        
+        const res = await fetch(`/api/pitch/${pitchId}`);
+        const data = await res.json();
+        
+        document.getElementById('projectTitle').innerText = data.projectTitle;
+        document.getElementById('clientName').innerText = data.clientName;
+        
+        // Render tracks similarly to the catalog logic
+    }
+    window.onload = loadPitch;
+</script>

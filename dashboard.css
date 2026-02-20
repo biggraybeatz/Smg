@@ -1,0 +1,38 @@
+.layout-wrapper {
+  display: flex;
+  height: 100vh;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.sidebar {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+}
+
+.content-area {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.chart-box {
+  height: 400px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+/* Typography and Accents */
+.accent {
+  color: var(--sapphire-accent);
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(55, 208, 255, 0.2);
+  border: 1px solid var(--sapphire-accent);
+  font-size: 0.8rem;
+}

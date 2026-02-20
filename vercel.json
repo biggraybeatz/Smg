@@ -1,0 +1,35 @@
+{
+  "version": 2,
+  "name": "smgpub",
+  "builds": [
+    {
+      "src": "apps/api/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "apps/web/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    }
+
+<head><meta name="color-scheme" content="light dark"></head><body><pre style="word-wrap: break-word; white-space: pre-wrap;">{
+  "version": 2,
+  "builds": [
+    { "src": "apps/api/server.js", "use": "@vercel/node" },
+    { "src": "apps/web/package.json", "use": "@vercel/static-build" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "apps/api/server.js" },
+    { "src": "/dashboard", "dest": "/dashboard.html" },
+    { "src": "/(.*)", "dest": "apps/web/$1", "continue": true },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}w
+</pre></body></html>
+  ],
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "apps/api/index.js" },
+    { "source": "/(.*)", "destination": "apps/web/$1" }
+  ]
+}
