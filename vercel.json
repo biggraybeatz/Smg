@@ -19,4 +19,3 @@
     { "source": "/api/(.*)", "destination": "apps/api/index.js" },
     { "source": "/(.*)", "destination": "apps/web/$1" }
   ]
-}
